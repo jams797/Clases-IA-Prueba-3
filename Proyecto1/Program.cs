@@ -311,3 +311,15 @@ int leerNumeroEntero(string mensaje, bool mayor0)
 //EmpleadoModel.calcularProceso(emp.sueldo);
 
 
+
+
+
+// 1. Crear listas de clase de persona, que tenga nombre, apellido, edad
+// 2. Realizar busquedad de personas que sean mayores de edad y mostralas
+// 3. Mostrar que personas coinciden que su nombre empiece con la misma letra su nombre y su apellido (Ej: Marco Moran)
+// 4. Buscar la primer persona que su edad sea mayor de edad y su nombre empiece con C
+
+
+
+
+// ----
