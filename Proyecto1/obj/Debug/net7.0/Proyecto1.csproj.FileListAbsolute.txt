@@ -1,0 +1,15 @@
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/bin/Debug/net7.0/Proyecto1
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/bin/Debug/net7.0/Proyecto1.deps.json
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/bin/Debug/net7.0/Proyecto1.runtimeconfig.json
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/bin/Debug/net7.0/Proyecto1.dll
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/bin/Debug/net7.0/Proyecto1.pdb
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/obj/Debug/net7.0/Proyecto1.csproj.AssemblyReference.cache
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/obj/Debug/net7.0/Proyecto1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/obj/Debug/net7.0/Proyecto1.AssemblyInfoInputs.cache
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/obj/Debug/net7.0/Proyecto1.AssemblyInfo.cs
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/obj/Debug/net7.0/Proyecto1.csproj.CoreCompileInputs.cache
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/obj/Debug/net7.0/Proyecto1.dll
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/obj/Debug/net7.0/refint/Proyecto1.dll
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/obj/Debug/net7.0/Proyecto1.pdb
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/obj/Debug/net7.0/Proyecto1.genruntimeconfig.cache
+/Users/viamatica.apps.01/Projects/Clase3/Proyecto1/obj/Debug/net7.0/ref/Proyecto1.dll
