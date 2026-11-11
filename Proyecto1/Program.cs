@@ -14,6 +14,7 @@ using Proyecto1;
 // Datetime
 
 // ICollection
+// IEnumerable
 
 
 // var
@@ -95,7 +96,41 @@ foreach(PersonaModel persona in listaPersonas)
     Console.WriteLine(mensaje);
 }
 
-Console.WriteLine($"Cuantas personas que tienen gato hay en el grupo?: {personasConGatos}");
+//foreach (PersonaModel persona in listaPersonas)
+//{
+//    string mensaje = $"{persona.nombre} tiene {persona.edad} años";
+//    Console.WriteLine(mensaje);
+//}
+// select
+// find
+// Exist
+// where
+// count
+// firts - firstdefault
+// last - lastdefault
+
+// foreach
+
+listaPersonas.ForEach((persona) => Console.WriteLine($"{persona.nombre} tiene {persona.edad} años"));
+
+// ( (x) => <<proceso>> )
+
+// SELECT t1.nombre, t1.edad, t1.sexo FROM Tabla1 as t1 WHERE id > 10
+// ( (t1) => t1.camp1 >= 10 )
+
+int cantidadMascotaBuscada = listaPersonas.Where(
+                        (persona) => persona.mascota.Exists(
+                                            (masct) => masct.tipo == MascotaModel.TipoMascota.Perro
+                                    )
+                    ).Count();
+
+var tmp = listaPersonas.Select((perM) => new PersonaModel(perM.edad, perM.nombre, null)).ToList();
+
+Console.WriteLine($"Cuantas personas que tienen perro hay en el grupo?: {cantidadMascotaBuscada}");
+
+//Console.WriteLine($"Cuantas personas que tienen gato hay en el grupo?: {personasConGatos}");
+
+
 
 /*
 int num1 = numeroIngresado("1°");

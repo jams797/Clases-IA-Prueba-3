@@ -1,27 +1,33 @@
-﻿<Properties StartupConfiguration="{844DF4FA-AD61-4FCB-86C1-F63350DDF4FF}|Default">
+﻿<Properties StartupConfiguration="{C0B2BD8F-7A5E-4CBA-9972-ECBFFA998F8E}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Proyecto1/Program.cs">
+  <MonoDevelop.Ide.ItemProperties.Proyecto1 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/viamatica.apps.01/Projects/Clase3/Ejercicio2/Program.cs" relfile="Ejercicio2/Program.cs" line="12" column="1" />
+      <Breakpoint file="/Users/viamatica.apps.01/Projects/Clase3/Ejercicio2/MetodosHelper.cs" relfile="Ejercicio2/MetodosHelper.cs" line="23" column="1" />
+      <Breakpoint file="/Users/viamatica.apps.01/Projects/Clase3/Ejercicio2/MetodosHelper.cs" relfile="Ejercicio2/MetodosHelper.cs" line="12" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Ejercicio2/MetodosHelper.cs">
     <Files>
-      <File FileName="Proyecto1/Program.cs" Line="44" Column="1" />
-      <File FileName="Proyecto1/PersonaModel.cs" Line="8" Column="45" />
-      <File FileName="Proyecto1/MascotaModel.cs" Line="8" Column="28" />
+      <File FileName="Ejercicio2/MetodosHelper.cs" Line="23" Column="1" />
+      <File FileName="Ejercicio2/Program.cs" />
+      <File FileName="Ejercicio2/PersonaModel.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Clase3" expanded="True">
-            <Node name="Proyecto1" expanded="True">
-              <Node name="Program.cs" selected="True" />
+            <Node name="Ejercicio2" expanded="True">
+              <Node name="MetodosHelper.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <Debugger.DebugSourceFolders />
+  <MonoDevelop.Ide.ItemProperties.Ejercicio2 PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Proyecto1 PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
