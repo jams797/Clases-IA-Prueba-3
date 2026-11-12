@@ -29,7 +29,9 @@ namespace Ejercicio2
 
         public void ObtenerPersonaMayorATodos()
         {
-            PersonaModel? personaF = VariablesHelper.listaPersonas.MaxBy((perM) => perM.edad);
+            //PersonaModel? personaF = VariablesHelper.listaPersonas.MaxBy((perM) => perM.edad);
+            int personaFB = VariablesHelper.listaPersonas.Max((perM) => perM.edad);
+            PersonaModel? personaF = VariablesHelper.listaPersonas.FirstOrDefault((perM) => perM.edad == personaFB);
             if (personaF != null)
             {
                 MetodosHelper.MostrarPersonasEnConsola(personaF);
