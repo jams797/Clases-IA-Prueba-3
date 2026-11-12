@@ -12,6 +12,7 @@ namespace Ejercicio2
             string? datoLeido = null;
             while (datoLeido == null)
             {
+                //Console.SetCursorPosition(0, Console.CursorTop - 2);
                 Console.WriteLine(mensaje);
                 datoLeido = Console.ReadLine();
             }
@@ -37,7 +38,7 @@ namespace Ejercicio2
 
         static public void MostrarPersonasEnConsola(PersonaModel perM)
         {
-            Console.WriteLine($"La persona con nombre {perM.nombre} tiene {perM.edad} años");
+            Console.WriteLine($"(ID: {perM.id}) La persona con nombre {perM.nombre} tiene {perM.edad} años");
         }
     }
 }

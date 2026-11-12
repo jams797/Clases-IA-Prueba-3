@@ -1,13 +1,9 @@
 ﻿using Ejercicio2;
 
-List<PersonaModel> listaPersonas = new List<PersonaModel>()
-{
-    new PersonaModel("Jose", 20),
-    new PersonaModel("Marco", 22),
-};
-
 
 int opcion = -1;
+
+ProcesoHelper procH = new ProcesoHelper();
 
 
 while (opcion != 0)
@@ -18,6 +14,7 @@ while (opcion != 0)
     Console.WriteLine("2. Listar Personas");
     Console.WriteLine("3. Buscar personas por nombre");
     Console.WriteLine("4. Buscar la persona con mayor edad");
+    Console.WriteLine("5. Eliminar persona por id");
     Console.WriteLine("0. Salir");
     Console.WriteLine("");
 
@@ -26,27 +23,19 @@ while (opcion != 0)
     switch (opcion)
     {
         case 1:
-            string nombre = MetodosHelper.LeerDato("Ingresa el nombre de la persona");
-            int edad = MetodosHelper.LeerNumeroEntero("Ingresa la edad de la persona");
-            listaPersonas.Add(new PersonaModel(nombre, edad));
+            procH.CrearPersona();
             break;
         case 2:
-            MetodosHelper.MostrarPersonasDeUnaLista(listaPersonas);
+            procH.ListarPersonas();
             break;
         case 3:
-            string nombreB = MetodosHelper.LeerDato("Ingresa el nombre de la persona a buscar");
-            List<PersonaModel> personasBuscadas = listaPersonas.Where((perM) => perM.nombre.ToLower().Contains(nombreB.ToLower())).ToList();
-            MetodosHelper.MostrarPersonasDeUnaLista(personasBuscadas);
+            procH.BuscarPersonaPorNombre();
             break;
         case 4:
-            PersonaModel? personaF = listaPersonas.MaxBy((perM) => perM.edad);
-            if(personaF != null)
-            {
-                MetodosHelper.MostrarPersonasEnConsola(personaF);
-            } else
-            {
-                Console.WriteLine("No hay personas en la lista");
-            }
+            procH.ObtenerPersonaMayorATodos();
+            break;
+        case 5:
+            procH.EliminarPersonaPorId();
             break;
 
 
@@ -58,3 +47,8 @@ while (opcion != 0)
     Console.ReadKey();
     Console.Clear();
 }
+
+// PersonaModel, van a dicionar un campo de sueldo
+// Ingreso de persona debe tambien ingresar el sueldo
+// Debo poder listar las personas que tengan un sueldo mayor al que se quiere consultar (dato de busqueda)
+// Eliminar personas que sean menores o iguales a una edad especifica
