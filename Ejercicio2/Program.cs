@@ -15,6 +15,7 @@ while (opcion != 0)
     Console.WriteLine("3. Buscar personas por nombre");
     Console.WriteLine("4. Buscar la persona con mayor edad");
     Console.WriteLine("5. Eliminar persona por id");
+    Console.WriteLine("6. Buscar personas con sueldo mayor al consultado");
     Console.WriteLine("0. Salir");
     Console.WriteLine("");
 
@@ -37,6 +38,9 @@ while (opcion != 0)
         case 5:
             procH.EliminarPersonaPorId();
             break;
+        case 6:
+            procH.BuscarPersonaMayorSueldoConsultado();
+            break;
 
 
     }
@@ -52,3 +56,4 @@ while (opcion != 0)
 // Ingreso de persona debe tambien ingresar el sueldo
 // Debo poder listar las personas que tengan un sueldo mayor al que se quiere consultar (dato de busqueda)
 // Eliminar personas que sean menores o iguales a una edad especifica
+// Modificar el sueldo de una persona

@@ -5,8 +5,8 @@ namespace Ejercicio2
 	{
         public static List<PersonaModel> listaPersonas = new List<PersonaModel>()
 		{
-			new PersonaModel("Jose", 20),
-			new PersonaModel("Marco", 22),
+			new PersonaModel("Jose", 20, 400.0),
+			new PersonaModel("Marco", 22, 376.23),
 		};
 
         public VariablesHelper()

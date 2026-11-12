@@ -31,6 +31,18 @@ namespace Ejercicio2
             return num;
         }
 
+        static public double LeerNumeroDouble(string mensaje)
+        {
+            bool valor_correcto = false;
+            double num = 0;
+            while (valor_correcto == false)
+            {
+                string? valor = LeerDato(mensaje);
+                valor_correcto = double.TryParse(valor, out num);
+            }
+            return num;
+        }
+
         static public void MostrarPersonasDeUnaLista(List<PersonaModel> listaPersonas)
         {
             listaPersonas.ForEach((perM) => MostrarPersonasEnConsola(perM));
@@ -38,7 +50,7 @@ namespace Ejercicio2
 
         static public void MostrarPersonasEnConsola(PersonaModel perM)
         {
-            Console.WriteLine($"(ID: {perM.id}) La persona con nombre {perM.nombre} tiene {perM.edad} años");
+            Console.WriteLine($"(ID: {perM.id}) La persona con nombre {perM.nombre} tiene {perM.edad} años, su sueldo es ${perM.sueldo}");
         }
     }
 }

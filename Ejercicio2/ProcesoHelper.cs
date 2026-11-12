@@ -12,7 +12,8 @@ namespace Ejercicio2
         {
             string nombre = MetodosHelper.LeerDato("Ingresa el nombre de la persona");
             int edad = MetodosHelper.LeerNumeroEntero("Ingresa la edad de la persona");
-            VariablesHelper.listaPersonas.Add(new PersonaModel(nombre, edad));
+            double sueldo = MetodosHelper.LeerNumeroDouble("Ingresar el sueldo de la persona");
+            VariablesHelper.listaPersonas.Add(new PersonaModel(nombre, edad, sueldo));
         }
 
         public void ListarPersonas()
@@ -56,6 +57,13 @@ namespace Ejercicio2
             {
                 Console.WriteLine("Persona no encontrada");
             }
+        }
+
+        public void BuscarPersonaMayorSueldoConsultado()
+        {
+            double sueldoB = MetodosHelper.LeerNumeroDouble("Ingrese el sueldo a consultar");
+            List<PersonaModel> listaF = VariablesHelper.listaPersonas.Where((perM) => perM.sueldo > sueldoB).ToList();
+            MetodosHelper.MostrarPersonasDeUnaLista(listaF);
         }
     }
 }
