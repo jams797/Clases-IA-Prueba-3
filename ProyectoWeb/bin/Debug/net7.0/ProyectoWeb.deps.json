@@ -16,7 +16,10 @@
       },
       "Library/1.0.0": {
         "runtime": {
-          "Library.dll": {}
+          "Library.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

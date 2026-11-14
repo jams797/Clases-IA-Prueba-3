@@ -32,4 +32,5 @@
 /Users/viamatica.apps.01/Projects/Clase3/ProyectoWeb/bin/Debug/net7.0/appsettings.Productions.json
 /Users/viamatica.apps.01/Projects/Clase3/ProyectoWeb/bin/Debug/net7.0/Library.dll
 /Users/viamatica.apps.01/Projects/Clase3/ProyectoWeb/bin/Debug/net7.0/Library.pdb
-/Users/viamatica.apps.01/Projects/Clase3/ProyectoWeb/obj/Debug/net7.0/ProyectoWeb.csproj.CopyComplete
+/Users/viamatica.apps.01/Projects/Clase3/ProyectoWeb/obj/Debug/net7.0/ProyectoWeb.sourcelink.json
+/Users/viamatica.apps.01/Projects/Clase3/ProyectoWeb/obj/Debug/net7.0/Proyecto.E64FB7CD.Up2Date

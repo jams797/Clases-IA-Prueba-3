@@ -1,18 +1,37 @@
-﻿<Properties StartupConfiguration="{C0B2BD8F-7A5E-4CBA-9972-ECBFFA998F8E}|Default">
+﻿<Properties StartupConfiguration="{DB9EDE92-D6F6-49F8-A0C7-406A0365226E}|http">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Ejercicio2/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProyectoWeb/Pages/Index.cshtml.cs">
     <Files>
-      <File FileName="Ejercicio2/MetodosHelper.cs" Line="55" Column="6" />
-      <File FileName="Ejercicio2/PersonaModel.cs" Line="15" Column="25" />
-      <File FileName="Ejercicio2/Program.cs" Line="47" Column="1" />
-      <File FileName="Ejercicio2/ProcesoHelper.cs" Line="67" Column="10" />
-      <File FileName="Ejercicio2/VariablesHelper.cs" Line="12" Column="33" />
+      <File FileName="ProyectoWeb/Program.cs" Line="19" Column="18" />
+      <File FileName="ProyectoWeb/Pages/Index.cshtml" Line="32" Column="18" />
+      <File FileName="ProyectoWeb/Pages/Privacy.cshtml" Line="4" Column="42" />
+      <File FileName="ProyectoWeb/Pages/_ViewStart.cshtml" Line="2" Column="22" />
+      <File FileName="ProyectoWeb/Pages/_ViewImports.cshtml" Line="4" Column="1" />
+      <File FileName="ProyectoWeb/Pages/Shared/_Layout.cshtml" Line="6" Column="13" />
+      <File FileName="ProyectoWeb/wwwroot/js/site.js" Line="1" Column="1" />
+      <File FileName="ProyectoWeb/Properties/launchSettings.json" Line="16" Column="47" />
+      <File FileName="ProyectoWeb/appsettings.json" Line="7" Column="5" />
+      <File FileName="ProyectoWeb/appsettings.Development.json" Line="9" Column="17" />
+      <File FileName="ProyectoWeb/appsettings.Productions.json" Line="9" Column="17" />
+      <File FileName="ProyectoWeb/Pages/Index.cshtml.cs" Line="8" Column="25" />
+      <File FileName="ProyectoWeb/Models/PersonModelCreate.cs" Line="11" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Clase3">
-            <Node name="Ejercicio2" expanded="True" />
+            <Node name="ProyectoWeb">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Shared" expanded="True" />
+                <Node name="Index.cshtml" expanded="True">
+                  <Node name="Index.cshtml.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -20,10 +39,12 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.Proyecto1 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.ProyectoPrueba FirstBuild="True" />
   <Debugger.DebugSourceFolders />
-  <MonoDevelop.Ide.ItemProperties.ProyectoWeb FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.ProyectoWeb PreferredExecutionTarget="/Applications/Arc.app" />
   <MonoDevelop.Ide.ItemProperties.Ejercicio2 PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

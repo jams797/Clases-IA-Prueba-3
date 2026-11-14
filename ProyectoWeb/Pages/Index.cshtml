@@ -4,6 +4,8 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+
+    int personsBySalary = IndexModel.ListPersons.Count((person) => person.salary >= 480);
 }
 <style>
     td {
@@ -15,14 +17,63 @@
     <h1 class="display-4">Welcome - @Config["MensajePrueba"]</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 
+    Hay @IndexModel.ListPersons.Count() personas, y @personsBySalary personas tienen mas del sueldo basico
     <table>
         <tr>
             <td>Nombre</td>
             <td>Edad</td>
             <td>Salario</td>
+            <td>Es mayor al basico</td>
             <td>Aportacion</td>
+            <td></td>
         </tr>
-        @foreach(PersonModel person in ListPersons)
+        @foreach (PersonModel person in IndexModel.ListPersons.OrderBy((person) => person.name).ToList())
+        {
+            <tr>
+                <td>@person.name</td>
+                <td>@person.age</td>
+                <td>$@person.salary</td>
+                <td>@(person.salary >= 480 ? "SI" : "NO")</td>
+                <td>$@person.input</td>
+                <td>
+                    <button onclick="CreateOrEdit('@person.id', @person.salary)">Editar</button>
+                    <form method="post" asp-page-handler="Delete"><input style="display: none;" value="@person.id" name="id" /><input type="submit" value="Eliminar" /></form>
+                </td>
+            </tr>
+        }
     </table>
+    <br />
+    <button onclick="CreateOrEdit(null)">Nuevo</button>
+    <br />
+    <br />
+    <form id="form" method="post" asp-page-handler="Create">
+        <input id="uuid" type="text" readonly="readonly" asp-for="Formulario.Uuid" name="uuid" />
+        <label>Nombre:</label>
+        <input id="name" type="text" asp-for="Formulario.Name" />
+        <label>Edad:</label>
+        <input id="age" type="number" asp-for="Formulario.Age" name="age" />
+        <label>salario:</label>
+        <input id="salary" type="number" asp-for="Formulario.Salary" name="salary" />
+        <input type="submit" value="Enviar" />
+    </form>
+
+    <script>function CreateOrEdit(uuid, salary) {
+            document.getElementById("form").style.display = 'block';
+            if (uuid != null) {
+                document.getElementById("name").style.display = 'none';
+                document.getElementById("age").style.display = 'none';
+                document.getElementById("salary").style.display = 'inline-block';
+                document.getElementById("salary").setAttribute("value", salary);
+                document.getElementById("uuid").setAttribute("value", uuid);
+            } else {
+                document.getElementById("name").style.display = 'inline-block';
+                document.getElementById("age").style.display = 'inline-block';
+                document.getElementById("salary").style.display = 'inline-block';
+                document.getElementById("name").setAttribute("value", "");
+                document.getElementById("age").setAttribute("value", 0);
+                document.getElementById("salary").setAttribute("value", 0);
+                document.getElementById("uuid").setAttribute("value", "");
+            }
+        }</script>
 </div>
 
