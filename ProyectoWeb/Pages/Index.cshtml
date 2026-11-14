@@ -1,0 +1,28 @@
+﻿@page
+@using Library.Models
+@inject IConfiguration Config
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<style>
+    td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+</style>
+<div class="text-center">
+    <h1 class="display-4">Welcome - @Config["MensajePrueba"]</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <table>
+        <tr>
+            <td>Nombre</td>
+            <td>Edad</td>
+            <td>Salario</td>
+            <td>Aportacion</td>
+        </tr>
+        @foreach(PersonModel person in ListPersons)
+    </table>
+</div>
+

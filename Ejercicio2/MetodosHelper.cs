@@ -1,4 +1,5 @@
 ﻿using System;
+using Library.Models;
 namespace Ejercicio2
 {
 	public class MetodosHelper
@@ -19,7 +20,7 @@ namespace Ejercicio2
             return datoLeido ?? "";
         }
 
-        static public int LeerNumeroEntero(string mensaje)
+        static public int ReadNumberInt(string mensaje)
         {
             bool valor_correcto = false;
             int num = 0;
@@ -43,14 +44,14 @@ namespace Ejercicio2
             return num;
         }
 
-        static public void MostrarPersonasDeUnaLista(List<PersonaModel> listaPersonas)
+        static public void MostrarPersonasDeUnaLista(List<PersonModel> listaPersonas)
         {
             listaPersonas.ForEach((perM) => MostrarPersonasEnConsola(perM));
         }
 
-        static public void MostrarPersonasEnConsola(PersonaModel perM)
+        static public void MostrarPersonasEnConsola(PersonModel perM)
         {
-            Console.WriteLine($"(ID: {perM.id}) La persona con nombre {perM.nombre} tiene {perM.edad} años, su sueldo es ${perM.sueldo}");
+            Console.WriteLine($"(ID: {perM.id}) La persona con nombre {perM.name} tiene {perM.age} años, su sueldo es ${perM.salary} y su aportacion es ${perM.input.ToString("F2")}");
         }
     }
 }

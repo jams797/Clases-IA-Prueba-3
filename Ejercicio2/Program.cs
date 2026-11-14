@@ -4,6 +4,9 @@
 int opcion = -1;
 
 ProcesoHelper procH = new ProcesoHelper();
+string password = new Library.Helpers.EncryptHelper().EncryptPassword("1234");
+
+
 
 
 while (opcion != 0)
@@ -16,10 +19,12 @@ while (opcion != 0)
     Console.WriteLine("4. Buscar la persona con mayor edad");
     Console.WriteLine("5. Eliminar persona por id");
     Console.WriteLine("6. Buscar personas con sueldo mayor al consultado");
+    Console.WriteLine("7. Eliminar personas menores o igual a una edad especifica");
+    Console.WriteLine("8. Actualizar el sueldo de una persona");
     Console.WriteLine("0. Salir");
     Console.WriteLine("");
 
-    opcion = MetodosHelper.LeerNumeroEntero("Escoja una opción");
+    opcion = MetodosHelper.ReadNumberInt("Escoja una opción");
     Console.Clear();
     switch (opcion)
     {
@@ -40,6 +45,12 @@ while (opcion != 0)
             break;
         case 6:
             procH.BuscarPersonaMayorSueldoConsultado();
+            break;
+        case 7:
+            procH.EliminarPersonasMenoresIgualEdadEspecifica();
+            break;
+        case 8:
+            procH.ActualizarSueldPersonaPorId();
             break;
 
 

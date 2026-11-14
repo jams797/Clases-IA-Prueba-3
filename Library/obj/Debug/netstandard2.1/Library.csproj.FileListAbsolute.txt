@@ -1,0 +1,10 @@
+/Users/viamatica.apps.01/Projects/Clase3/Library/bin/Debug/netstandard2.1/Library.deps.json
+/Users/viamatica.apps.01/Projects/Clase3/Library/bin/Debug/netstandard2.1/Library.dll
+/Users/viamatica.apps.01/Projects/Clase3/Library/bin/Debug/netstandard2.1/Library.pdb
+/Users/viamatica.apps.01/Projects/Clase3/Library/obj/Debug/netstandard2.1/Library.csproj.AssemblyReference.cache
+/Users/viamatica.apps.01/Projects/Clase3/Library/obj/Debug/netstandard2.1/Library.GeneratedMSBuildEditorConfig.editorconfig
+/Users/viamatica.apps.01/Projects/Clase3/Library/obj/Debug/netstandard2.1/Library.AssemblyInfoInputs.cache
+/Users/viamatica.apps.01/Projects/Clase3/Library/obj/Debug/netstandard2.1/Library.AssemblyInfo.cs
+/Users/viamatica.apps.01/Projects/Clase3/Library/obj/Debug/netstandard2.1/Library.csproj.CoreCompileInputs.cache
+/Users/viamatica.apps.01/Projects/Clase3/Library/obj/Debug/netstandard2.1/Library.dll
+/Users/viamatica.apps.01/Projects/Clase3/Library/obj/Debug/netstandard2.1/Library.pdb
