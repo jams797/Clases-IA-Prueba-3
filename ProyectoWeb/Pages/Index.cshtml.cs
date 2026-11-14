@@ -3,6 +3,7 @@ using ProyectoWeb.Models;
 using Library.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoWeb.Pages;
 
@@ -27,34 +28,58 @@ public class IndexModel : PageModel
     }
 
     [BindProperty]
-    public PersonModelCreate Formulario { get; set; } = new();
+    public string Uuid { get; set; } = string.Empty;
+    [BindProperty]
+    [Required(ErrorMessage = "El nombre es requerido"), StringLength(50, MinimumLength = 4, ErrorMessage = "El nombre debe tener entre 3 y 50 caracteres")]
+    public string Name { get; set; } = string.Empty;
+    [BindProperty]
+    public int Age { get; set; }
+    [BindProperty]
+    public double Salary { get; set; }
+
+    // Get
+    // Post
+    // Put
+    // Delete
 
     public IActionResult OnPostCreate()
     {
-        string? name = Request.Form["name"];
-        int? age = int.Parse(Request.Form["age"]);
-        double? salary = double.Parse(Request.Form["salary"]);
         //if (!ModelState.IsValid())
         //{
         //    return Page();
         //}
-        string? uuid = Request.Form["uuid"];
-        if((uuid ?? "") != "")
-        {
-            PersonModel personEdit = ListPersons.First((person) => person.id == uuid);
-            personEdit.UpdateSalary(salary ?? 0);
-        } else
-        {
-            ListPersons.Add(new PersonModel(name, age ?? 0, salary ?? 0));
-        }
+        // if((uuid ?? "") != "")
+        // {
+        //     PersonModel personEdit = ListPersons.First((person) => person.id == uuid);
+        //     personEdit.UpdateSalary(Salary);
+        // } else
+        // {
+        //     ListPersons.Add(new PersonModel(Name, Age, Salary));
+        // }
+        ListPersons.Add(new PersonModel(Name, Age, Salary));
         return Page();
     }
 
-    public IActionResult OnPostDelete()
-    {
-        string? uuid = Request.Form["id"];
 
-        ListPersons.RemoveAll((person) => person.id == uuid);
+    public IActionResult OnPostEdit(string id)
+    {
+        //if (!ModelState.IsValid())
+        //{
+        //    return Page();
+        //}
+        PersonModel personEdit = ListPersons.First((person) => person.id == id);
+        personEdit.UpdateSalary(Salary);
+        return Page();
+    }
+
+    public IActionResult OnPostDelete(string id)
+    {
+        // if(ModelState.IsValid == false)
+        // {
+        //     return Page();
+        // }
+
+        ListPersons.RemoveAll((person) => person.id == id);
 
         return Page();
     }

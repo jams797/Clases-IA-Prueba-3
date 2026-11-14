@@ -1,79 +1,109 @@
-﻿@page
+@page
 @using Library.Models
 @inject IConfiguration Config
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
-
-    int personsBySalary = IndexModel.ListPersons.Count((person) => person.salary >= 480);
+    ViewData["Title"] = "Personas";
+    int personsBySalary = IndexModel.ListPersons.Count(person => person.salary >= 480);
 }
-<style>
-    td {
-        border: 1px solid black;
-        padding: 5px;
-    }
-</style>
-<div class="text-center">
-    <h1 class="display-4">Welcome - @Config["MensajePrueba"]</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 
-    Hay @IndexModel.ListPersons.Count() personas, y @personsBySalary personas tienen mas del sueldo basico
-    <table>
-        <tr>
-            <td>Nombre</td>
-            <td>Edad</td>
-            <td>Salario</td>
-            <td>Es mayor al basico</td>
-            <td>Aportacion</td>
-            <td></td>
-        </tr>
-        @foreach (PersonModel person in IndexModel.ListPersons.OrderBy((person) => person.name).ToList())
-        {
-            <tr>
-                <td>@person.name</td>
-                <td>@person.age</td>
-                <td>$@person.salary</td>
-                <td>@(person.salary >= 480 ? "SI" : "NO")</td>
-                <td>$@person.input</td>
-                <td>
-                    <button onclick="CreateOrEdit('@person.id', @person.salary)">Editar</button>
-                    <form method="post" asp-page-handler="Delete"><input style="display: none;" value="@person.id" name="id" /><input type="submit" value="Eliminar" /></form>
-                </td>
-            </tr>
-        }
-    </table>
-    <br />
-    <button onclick="CreateOrEdit(null)">Nuevo</button>
-    <br />
-    <br />
-    <form id="form" method="post" asp-page-handler="Create">
-        <input id="uuid" type="text" readonly="readonly" asp-for="Formulario.Uuid" name="uuid" />
-        <label>Nombre:</label>
-        <input id="name" type="text" asp-for="Formulario.Name" />
-        <label>Edad:</label>
-        <input id="age" type="number" asp-for="Formulario.Age" name="age" />
-        <label>salario:</label>
-        <input id="salary" type="number" asp-for="Formulario.Salary" name="salary" />
-        <input type="submit" value="Enviar" />
-    </form>
-
-    <script>function CreateOrEdit(uuid, salary) {
-            document.getElementById("form").style.display = 'block';
-            if (uuid != null) {
-                document.getElementById("name").style.display = 'none';
-                document.getElementById("age").style.display = 'none';
-                document.getElementById("salary").style.display = 'inline-block';
-                document.getElementById("salary").setAttribute("value", salary);
-                document.getElementById("uuid").setAttribute("value", uuid);
-            } else {
-                document.getElementById("name").style.display = 'inline-block';
-                document.getElementById("age").style.display = 'inline-block';
-                document.getElementById("salary").style.display = 'inline-block';
-                document.getElementById("name").setAttribute("value", "");
-                document.getElementById("age").setAttribute("value", 0);
-                document.getElementById("salary").setAttribute("value", 0);
-                document.getElementById("uuid").setAttribute("value", "");
+<section class="people-page">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">PROYECTO WEB</p>
+            <h1>Gestión de personas</h1>
+            <p class="text-muted mb-0">Registra personas y administra sus salarios.</p>
+            @if (!string.IsNullOrWhiteSpace(Config["MensajePrueba"]))
+            {
+                <p class="text-muted mt-2 mb-0">@Config["MensajePrueba"]</p>
             }
-        }</script>
-</div>
-
+        </div>
+        <a class="btn btn-primary" href="#new-person">+ Nueva persona</a>
+    </div>
+    <div class="row g-3 mb-4">
+        <div class="col-sm-6">
+            <div class="summary-card">
+                <span class="text-muted">Personas registradas</span>
+                <strong>@IndexModel.ListPersons.Count</strong>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="summary-card">
+                <span class="text-muted">Con salario de $480 o más</span>
+                <strong>@personsBySalary</strong>
+            </div>
+        </div>
+    </div>
+    <div class="content-card mb-4">
+        <div class="card-heading">
+            <h2>Personas registradas</h2>
+            <p class="text-muted mb-0">Consulta los datos o actualiza el salario de cada persona.</p>
+        </div>
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Salario</th>
+                        <th scope="col">Salario ≥ $480</th>
+                        <th scope="col">Aportación</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (PersonModel person in IndexModel.ListPersons.OrderBy(person => person.name))
+                    {
+                        <tr>
+                            <td class="fw-semibold">@person.name</td>
+                            <td>@person.age</td>
+                            <td class="text-nowrap">$@person.salary.ToString("N2")</td>
+                            <td><span class="salary-badge @(person.salary >= 480 ? "salary-yes" : "salary-no")">@(person.salary >= 480 ? "Sí" : "No")</span></td>
+                            <td class="text-nowrap">$@person.input.ToString("N2")</td>
+                            <td>
+                                <div class="person-actions">
+                                    <details class="salary-editor">
+                                        <summary class="btn btn-outline-primary btn-sm">Editar salario</summary>
+                                        <form method="post" asp-page-handler="Edit" asp-route-id="@person.id" class="salary-form">
+                                            <label for="salary-@person.id" class="form-label">Salario de @person.name</label>
+                                            <input id="salary-@person.id" class="form-control form-control-sm mb-2" type="number" name="Salary" value="@person.salary.ToString(System.Globalization.CultureInfo.InvariantCulture)" step="any" />
+                                            <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
+                                        </form>
+                                    </details>
+                                    <form method="post" asp-page-handler="Delete" asp-route-id="@person.id">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" aria-label="Eliminar a @person.name">Eliminar</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                    @if (IndexModel.ListPersons.Count == 0)
+                    {
+                        <tr><td colspan="6" class="text-center text-muted py-5">Aún no hay personas registradas. Agrega la primera con el formulario.</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="new-person" class="content-card create-card">
+        <h2>Nueva persona</h2>
+        <p class="text-muted">Completa los datos para agregar una persona al listado.</p>
+        <form method="post" asp-page-handler="Create" class="row g-3">
+            <div class="col-md-6">
+                <label asp-for="Name" class="form-label">Nombre</label>
+                <input asp-for="Name" class="form-control" placeholder="Nombre completo" autocomplete="name" />
+            </div>
+            <div class="col-md-3">
+                <label asp-for="Age" class="form-label">Edad</label>
+                <input asp-for="Age" type="number" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label asp-for="Salary" class="form-label">Salario ($)</label>
+                <input asp-for="Salary" type="number" step="any" class="form-control" />
+            </div>
+            <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-primary">Guardar persona</button>
+            </div>
+        </form>
+    </div>
+</section>

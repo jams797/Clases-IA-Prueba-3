@@ -1,3 +1,45 @@
+/* _content/ProyectoWeb/Pages/Index.cshtml.rz.scp.css */
+.people-page[b-j5m9ceokpo] { padding: 1.5rem 0 2rem; color: #24324a; }
+.page-heading[b-j5m9ceokpo] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+.eyebrow[b-j5m9ceokpo] { color: #4263a3; font-size: .75rem; font-weight: 700; letter-spacing: .12em; margin-bottom: .5rem; }
+h1[b-j5m9ceokpo] { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 700; }
+h2[b-j5m9ceokpo] { font-size: 1.15rem; font-weight: 600; margin-bottom: .5rem; }
+.summary-card[b-j5m9ceokpo], .content-card[b-j5m9ceokpo] {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(36, 50, 74, .04);
+}
+.summary-card[b-j5m9ceokpo] { padding: 1.25rem 1.5rem; background: #f7f9fd; }
+.summary-card strong[b-j5m9ceokpo] { display: block; font-size: 2rem; margin-top: .25rem; color: #315bb5; }
+.card-heading[b-j5m9ceokpo], .create-card[b-j5m9ceokpo] { padding: 1.5rem; }
+.table th[b-j5m9ceokpo] { background: #f7f9fc; color: #56647a; font-size: .8rem; font-weight: 600; white-space: nowrap; }
+.table th[b-j5m9ceokpo], .table td[b-j5m9ceokpo] { padding: 1rem; border-color: #edf0f5; }
+.table tbody tr:last-child td[b-j5m9ceokpo] { border-bottom: 0; }
+.salary-badge[b-j5m9ceokpo] { display: inline-block; padding: .25rem .75rem; border-radius: 20px; font-size: .8rem; font-weight: 600; }
+.salary-yes[b-j5m9ceokpo] { background: #e6f4ed; color: #236746; }
+.salary-no[b-j5m9ceokpo] { background: #edf0f5; color: #56647a; }
+.person-actions[b-j5m9ceokpo] { display: flex; align-items: flex-start; flex-wrap: wrap; gap: .5rem; }
+.salary-editor summary[b-j5m9ceokpo] { list-style: none; }
+.salary-editor summary[b-j5m9ceokpo]::-webkit-details-marker { display: none; }
+.salary-form[b-j5m9ceokpo] { padding-top: .75rem; min-width: 150px; }
+.form-label[b-j5m9ceokpo] { font-size: .9rem; font-weight: 500; }
+.form-control[b-j5m9ceokpo] { border-color: #cdd6e3; border-radius: 8px; padding: .6rem .75rem; }
+.btn[b-j5m9ceokpo] { border-radius: 8px; }
+.btn-primary[b-j5m9ceokpo] { background: #315bb5; border-color: #315bb5; }
+.btn-primary:hover[b-j5m9ceokpo] { background: #264990; border-color: #264990; }
+.create-card[b-j5m9ceokpo] { scroll-margin-top: 1.5rem; }
+@media (max-width: 575.98px) {
+    .people-page[b-j5m9ceokpo] { padding-top: .75rem; }
+    .card-heading[b-j5m9ceokpo], .create-card[b-j5m9ceokpo] { padding: 1rem; }
+}
 /* _content/ProyectoWeb/Pages/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */

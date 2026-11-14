@@ -34,3 +34,4 @@
 /Users/viamatica.apps.01/Projects/Clase3/ProyectoWeb/obj/Debug/net8.0/ProyectoWeb.pdb
 /Users/viamatica.apps.01/Projects/Clase3/ProyectoWeb/obj/Debug/net8.0/ProyectoWeb.genruntimeconfig.cache
 /Users/viamatica.apps.01/Projects/Clase3/ProyectoWeb/obj/Debug/net8.0/ref/ProyectoWeb.dll
+/Users/viamatica.apps.01/Projects/Clase3/ProyectoWeb/obj/Debug/net8.0/scopedcss/Pages/Index.cshtml.rz.scp.css
