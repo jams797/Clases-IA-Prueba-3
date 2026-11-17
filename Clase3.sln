@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoPrueba", "ProyectoP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoWeb", "ProyectoWeb\ProyectoWeb.csproj", "{DB9EDE92-D6F6-49F8-A0C7-406A0365226E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoWebMvc", "ProyectoWebMvc\ProyectoWebMvc.csproj", "{7457D679-676C-4DD4-9B0E-AAF137DA2241}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoApi", "ProyectoApi\ProyectoApi.csproj", "{A336FE59-DBA5-41B2-A316-99CE247480B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,14 @@ Global
 		{DB9EDE92-D6F6-49F8-A0C7-406A0365226E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB9EDE92-D6F6-49F8-A0C7-406A0365226E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB9EDE92-D6F6-49F8-A0C7-406A0365226E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7457D679-676C-4DD4-9B0E-AAF137DA2241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7457D679-676C-4DD4-9B0E-AAF137DA2241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7457D679-676C-4DD4-9B0E-AAF137DA2241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7457D679-676C-4DD4-9B0E-AAF137DA2241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A336FE59-DBA5-41B2-A316-99CE247480B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A336FE59-DBA5-41B2-A316-99CE247480B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A336FE59-DBA5-41B2-A316-99CE247480B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A336FE59-DBA5-41B2-A316-99CE247480B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

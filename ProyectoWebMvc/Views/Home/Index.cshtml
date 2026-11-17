@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Library.Models.PersonModel>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<button class="btn btn-primary" onclick="">Agregar</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Salario</th>
+            <th>Aportacion</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.name</td>
+                <td>@person.age</td>
+                <td>$@person.salary</td>
+                <td>$@person.input</td>
+                <td>
+                    <form asp-action="EditUser" asp-controller="Home" method="post" asp-route-id="@person.id">
+                        <input type="number" name="Salary" placeholder="Nuevo Salario" />
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    </form>
+                    <form asp-action="DeleteUser" asp-controller="Home" method="post" asp-route-id="@person.id" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+    <form asp-action="AddUser" asp-controller="Home" method="post">
+        <input type="text" name="Name" placeholder="Nombre" />
+        <input type="number" name="Age" placeholder="Edad" />
+        <input type="number" name="Salary" placeholder="Salario" />
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>

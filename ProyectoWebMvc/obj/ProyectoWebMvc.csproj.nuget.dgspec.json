@@ -1,0 +1,131 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/viamatica.apps.01/Projects/Clase3/ProyectoWebMvc/ProyectoWebMvc.csproj": {}
+  },
+  "projects": {
+    "/Users/viamatica.apps.01/Projects/Clase3/Library/Library.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/viamatica.apps.01/Projects/Clase3/Library/Library.csproj",
+        "projectName": "Library",
+        "projectPath": "/Users/viamatica.apps.01/Projects/Clase3/Library/Library.csproj",
+        "packagesPath": "/Users/viamatica.apps.01/.nuget/packages/",
+        "outputPath": "/Users/viamatica.apps.01/Projects/Clase3/Library/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/viamatica.apps.01/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/viamatica.apps.01/.dotnet/sdk/8.0.422/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/viamatica.apps.01/Projects/Clase3/ProyectoWebMvc/ProyectoWebMvc.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/viamatica.apps.01/Projects/Clase3/ProyectoWebMvc/ProyectoWebMvc.csproj",
+        "projectName": "ProyectoWebMvc",
+        "projectPath": "/Users/viamatica.apps.01/Projects/Clase3/ProyectoWebMvc/ProyectoWebMvc.csproj",
+        "packagesPath": "/Users/viamatica.apps.01/.nuget/packages/",
+        "outputPath": "/Users/viamatica.apps.01/Projects/Clase3/ProyectoWebMvc/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/viamatica.apps.01/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/viamatica.apps.01/Projects/Clase3/Library/Library.csproj": {
+                "projectPath": "/Users/viamatica.apps.01/Projects/Clase3/Library/Library.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/viamatica.apps.01/.dotnet/sdk/8.0.422/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
