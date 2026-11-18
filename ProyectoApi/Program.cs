@@ -1,3 +1,5 @@
+using ProyectoApi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+List<Library.Models.PersonModel> persons = new List<Library.Models.PersonModel>
+{
+    new Library.Models.PersonModel("Juan", 30, 1000.0),
+    new Library.Models.PersonModel("Pedro", 25, 1500.0),
+    new Library.Models.PersonModel("Maria", 28, 2000.0),
+};
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -31,23 +40,30 @@ app.MapGet("/weatherforecast", () =>
             summaries[Random.Shared.Next(summaries.Length)]
         ))
         .ToArray();
-    return forecast;
+    return new ResponseModel<WeatherForecast[]> { message = "Datos obtenidos correctamente", data = forecast, code = 200 };
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
 
-app.MapGet("/Ejemplo1", () =>
+app.MapGet("/GetPersons", () =>
 {
     
-    return new List<Library.Models.PersonModel>
-    {
-        new Library.Models.PersonModel("Juan", 30, 1000.0),
-        new Library.Models.PersonModel("Pedro", 25, 1500.0),
-        new Library.Models.PersonModel("Maria", 28, 2000.0),
-    };
+    return new ResponseModel<List<Library.Models.PersonModel>> { message = "Personas obtenidas correctamente", data = persons, code = 200 };
 })
-.WithName("Ejemplo1")
+.WithName("GetPersons")
+.WithOpenApi();
+
+app.MapPost("/SavePerson", (AddPersonModel person) =>
+{
+    if(persons.Exists((personList) => personList.name == person.name))
+    {
+        return new ResponseModel<string?> { message = "La persona ya existe", code = 400, data = null };
+    }
+    persons.Add(new Library.Models.PersonModel(person.name, person.age, person.salary));
+    return new ResponseModel<string?> { message = "Persona guardada correctamente", code = 200, data = null };
+})
+.WithName("SavePerson")
 .WithOpenApi();
 
 app.Run();
