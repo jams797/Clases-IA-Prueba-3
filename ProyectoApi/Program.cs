@@ -66,6 +66,47 @@ app.MapPost("/SavePerson", (AddPersonModel person) =>
 .WithName("SavePerson")
 .WithOpenApi();
 
+
+app.MapPut("/UpdateSalaryPerson/{id}", (string id, GetParamSalaryModel person) =>
+{
+    var personToUpdate = persons.Find((personList) => personList.id == id);
+    if(personToUpdate == null)
+    {
+        return new ResponseModel<string?> { message = "La persona no existe", code = 400, data = null };
+    }
+    personToUpdate.UpdateSalary(person.salary);
+    return new ResponseModel<string?> { message = "Salario actualizado correctamente", code = 200, data = null };
+})
+.WithName("UpdateSalaryPerson")
+.WithOpenApi();
+
+app.MapDelete("/DeletePerson/{id}", (string id) =>
+{
+    var personToUpdate = persons.Find((personList) => personList.id == id);
+    if(personToUpdate == null)
+    {
+        return new ResponseModel<string?> { message = "La persona no existe", code = 400, data = null };
+    }
+    persons.Remove(personToUpdate);
+    return new ResponseModel<string?> { message = "Persona eliminada correctamente", code = 200, data = null };
+})
+.WithName("DeletePerson")
+.WithOpenApi();
+
+
+
+app.MapPost("/GetPersonsFilterBySalary", (GetParamSalaryModel paramsModel) =>
+{
+    
+    return new ResponseModel<List<Library.Models.PersonModel>> { message = "Personas obtenidas correctamente", data = persons.Where((person) => person.salary >= paramsModel.salary).ToList(), code = 200 };
+})
+.WithName("GetPersonsFilterBySalary")
+.WithOpenApi();
+
+// Crear un servicio que me permita editar el salario de las personas (por id)
+// Crear un servicio que me permita eliminar una persona por su id
+// Crear un servicio que me permita obtener las personas que tengan un salario mayor a un valor ingresado por el usuario
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
