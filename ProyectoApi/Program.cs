@@ -7,6 +7,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var myPolicyCors = "MyPolicy";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: myPolicyCors,
+                      policy =>
+                      {
+                          policy.WithOrigins("*")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                      });
+});
+
 var app = builder.Build();
 
 List<Library.Models.PersonModel> persons = new List<Library.Models.PersonModel>
@@ -24,7 +37,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors(myPolicyCors);
 var summaries = new[]
 {
     "Jose", "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
