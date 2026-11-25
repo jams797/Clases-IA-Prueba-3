@@ -40,7 +40,7 @@ public class WeatherForecastController : ControllerBase
     }
 
 
-    [HttpGet(Name = "Prueba")]
+    [HttpGet("Prueba", Name = "Prueba")]
     public string? Prueba()
     {
         // ciclado: while - for - foreach
@@ -79,10 +79,10 @@ public class WeatherForecastController : ControllerBase
 
         List<string> listaFiltrada = lista.Where((item) => item.Length > 4).ToList();
 
-        List<PersonaModel> personas = lista.Select((item) => new PersonaModel(item)).ToList();
+        // List<PersonaModel> personas = lista.Select((item) => new PersonaModel(item)).ToList();
 
 
-        List<int> cantidadCaracteres = personas.Select((item) => item.cantidadCaracteres).ToList();
+        // List<int> cantidadCaracteres = personas.Select((item) => item.cantidadCaracteres).ToList();
 
         List<bool> cumplen = lista.Select((item) => item.Length > 4).ToList();
         // false, true, true, false, false
@@ -112,11 +112,6 @@ public class WeatherForecastController : ControllerBase
 
     return null;
         
-    }
-
-    int obtenerDato(string n1)
-    {
-        return 0;
     }
 
     
@@ -221,15 +216,15 @@ public class WeatherForecastController : ControllerBase
     // Eliminar Persona en base al ID
     // Editar salario de una persona en base a su id
 
-    class PersonaModel
-    {
-        public string nombre { get; set; }
-        public int cantidadCaracteres { get; set; }
+    // class PersonaModel
+    // {
+    //     public string nombre { get; set; }
+    //     public int cantidadCaracteres { get; set; }
 
-        public PersonaModel(string nombre)
-        {
-            this.nombre = nombre;
-            this.cantidadCaracteres = nombre.Length;
-        }
-    }
+    //     public PersonaModel(string nombre)
+    //     {
+    //         this.nombre = nombre;
+    //         this.cantidadCaracteres = nombre.Length;
+    //     }
+    // }
 }
