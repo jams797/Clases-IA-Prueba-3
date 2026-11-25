@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using ProyectoApiMvc.BD;
 using ProyectoApiMvc.Models.DB;
@@ -36,6 +37,86 @@ public class WeatherForecastController : ControllerBase
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         })
         .ToArray();
+    }
+
+
+    [HttpGet(Name = "Prueba")]
+    public string? Prueba()
+    {
+        // ciclado: while - for - foreach
+        // condicionales: if-else - switch 
+        // operadores: + - * / % == != > < >= <= && || !
+        // Listas: List<T> - Colecciones - Array - Dictionary<K,V>
+
+        List<string> lista = new List<string>()
+        {
+            "Jose", "Maria", "Pedro", "Juan", "Luis"
+        };
+        // Jose: 0; Maria: 1; Pedro: 2; Juan: 3; Luis: 4
+
+        int indiceB1 = lista.FindIndex((item) => item == "Juan");
+
+        int indiceBusc = -1;
+        // int i = 0;
+        // foreach(string item in lista)
+        // {
+        //     if(item == "Juan")
+        //     {
+        //         indiceBusc = i;
+        //         break;
+        //     }
+        //     i ++;
+        // }
+        // for(int i = 0; i < lista.Count; i++)
+        // {
+        //     if(lista[i] == "Juan")
+        //     {
+        //         indiceBusc = i;
+        //         break;
+        //     }
+        // }
+        string? elemento = lista.FirstOrDefault((x) => x == "Juan");
+
+        List<string> listaFiltrada = lista.Where((item) => item.Length > 4).ToList();
+
+        List<PersonaModel> personas = lista.Select((item) => new PersonaModel(item)).ToList();
+
+
+        List<int> cantidadCaracteres = personas.Select((item) => item.cantidadCaracteres).ToList();
+
+        List<bool> cumplen = lista.Select((item) => item.Length > 4).ToList();
+        // false, true, true, false, false
+
+        int edad = int.Parse("30");
+
+        List<int> prueba = lista.Select((item) => int.Parse(item)).ToList();
+        List<int> prueba2 = new List<int>();
+        foreach(string item in lista)
+        {
+            prueba2.Add(int.Parse(item));
+        }
+
+        lista = lista.Where((item) => item.Length < 5).ToList();
+        List<string> lista2 = new List<string>();
+        foreach(string item in lista)
+        {
+            if(item.Length < 5)
+            {
+                lista2.Add(item);
+            }
+        }
+        lista = lista2;
+
+
+
+
+    return null;
+        
+    }
+
+    int obtenerDato(string n1)
+    {
+        return 0;
     }
 
     
@@ -134,6 +215,21 @@ public class WeatherForecastController : ControllerBase
                 "Ocurrio un error al consultar los datos",
                 ex.Message
             );
+        }
+    }
+
+    // Eliminar Persona en base al ID
+    // Editar salario de una persona en base a su id
+
+    class PersonaModel
+    {
+        public string nombre { get; set; }
+        public int cantidadCaracteres { get; set; }
+
+        public PersonaModel(string nombre)
+        {
+            this.nombre = nombre;
+            this.cantidadCaracteres = nombre.Length;
         }
     }
 }
