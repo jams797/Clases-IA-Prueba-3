@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoApi", "ProyectoApi\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoApiMvc", "ProyectoApiMvc\ProyectoApiMvc.csproj", "{2089C411-E616-459A-B1F1-528A9DFDFA0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConexionDB", "ConexionDB\ConexionDB.csproj", "{2953E223-B850-4BD1-BA5D-230B3C85DF0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{2089C411-E616-459A-B1F1-528A9DFDFA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2089C411-E616-459A-B1F1-528A9DFDFA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2089C411-E616-459A-B1F1-528A9DFDFA0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2953E223-B850-4BD1-BA5D-230B3C85DF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2953E223-B850-4BD1-BA5D-230B3C85DF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2953E223-B850-4BD1-BA5D-230B3C85DF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2953E223-B850-4BD1-BA5D-230B3C85DF0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

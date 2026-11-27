@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace ConexionDB.Models;
+
+public partial class Producto
+{
+    public int ProductoId { get; set; }
+
+    public string? ProductoDescrip { get; set; }
+
+    public int? Estado { get; set; }
+
+    public DateTime? FechaHoraReg { get; set; }
+
+    public decimal? Precio { get; set; }
+
+    public int? CategId { get; set; }
+
+    public int? MarcaId { get; set; }
+
+    public int? ModeloId { get; set; }
+
+    public virtual Categorium? Categ { get; set; }
+
+    public virtual Marca? Marca { get; set; }
+
+    public virtual Modelo? Modelo { get; set; }
+
+    public virtual ICollection<Venta> Venta { get; set; } = new List<Venta>();
+}

@@ -1,0 +1,15 @@
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/bin/Debug/net8.0/ConexionDB.deps.json
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/bin/Debug/net8.0/ConexionDB.runtimeconfig.json
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/bin/Debug/net8.0/ConexionDB.dll
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/bin/Debug/net8.0/ConexionDB.pdb
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/obj/Debug/net8.0/ConexionDB.csproj.AssemblyReference.cache
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/obj/Debug/net8.0/ConexionDB.GeneratedMSBuildEditorConfig.editorconfig
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/obj/Debug/net8.0/ConexionDB.AssemblyInfoInputs.cache
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/obj/Debug/net8.0/ConexionDB.AssemblyInfo.cs
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/obj/Debug/net8.0/ConexionDB.csproj.CoreCompileInputs.cache
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/obj/Debug/net8.0/ConexionDB.sourcelink.json
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/obj/Debug/net8.0/ConexionDB.dll
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/obj/Debug/net8.0/refint/ConexionDB.dll
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/obj/Debug/net8.0/ConexionDB.pdb
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/obj/Debug/net8.0/ConexionDB.genruntimeconfig.cache
+/Users/viamatica.apps.01/Projects/Clase3/ConexionDB/obj/Debug/net8.0/ref/ConexionDB.dll
