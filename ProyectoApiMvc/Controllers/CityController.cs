@@ -28,6 +28,16 @@ namespace ProyectoApiMvc.Controllers
 
         // [Metodo][Req/Resp][Model]
 
+        // Eliminar una ciudad en base a su ID
+        // Actualizar el nombre de una cidudad en base a su ID
+        // Activar y desactivar ciudad en base a su ID
+
+
+        // Liste las ciudades activas
+        // Me Elimine varias ciudades en base a un listado de IDs
+
+
+
         [HttpPost("SaveCity", Name = "SaveCity")]
         public ResponseGeneralModel<string?> SaveCity(SaveCityRequestModel requestModel)
         {
@@ -43,6 +53,60 @@ namespace ProyectoApiMvc.Controllers
                 
             }
             return new ResponseGeneralModel<string?>(true, null, "Ciudad creada", null);
+        }
+
+        [HttpDelete("DeleteCity/{id}", Name = "DeleteCity")]
+        public ResponseGeneralModel<string?> DeleteCity(int id)
+        {
+            using(PruebaContext pruebaContext = new PruebaContext())
+            {
+                Ciudad? cityFind = pruebaContext.Ciudades.FirstOrDefault((x) => x.CiudadId == id);
+                if(cityFind != null)
+                {
+                    pruebaContext.Ciudades.Remove(cityFind);
+                    pruebaContext.SaveChanges();
+                    return new ResponseGeneralModel<string?>(true, null, "Ciudad eliminada", null);
+                } else
+                {
+                    return new ResponseGeneralModel<string?>(false, null, "Ciudad no encontrada", null);
+                }
+            }
+        }
+
+        [HttpPut("UpdateNameCity/{id}", Name = "UpdateNameCity")]
+        public ResponseGeneralModel<string?> UpdateNameCity(int id, UpdateNameCityRequestModel requestModel)
+        {
+            using(PruebaContext pruebaContext = new PruebaContext())
+            {
+                Ciudad? cityFind = pruebaContext.Ciudades.FirstOrDefault((x) => x.CiudadId == id);
+                if(cityFind != null)
+                {
+                    cityFind.CiudadNombre = requestModel.name;
+                    pruebaContext.SaveChanges();
+                    return new ResponseGeneralModel<string?>(true, null, "Ciudad actualizada", null);
+                } else
+                {
+                    return new ResponseGeneralModel<string?>(false, null, "Ciudad no encontrada", null);
+                }
+            }
+        }
+
+        [HttpPut("ChangeStatusCity/{id}", Name = "ChangeStatusCity")]
+        public ResponseGeneralModel<string?> ChangeStatusCity(int id)
+        {
+            using(PruebaContext pruebaContext = new PruebaContext())
+            {
+                Ciudad? cityFind = pruebaContext.Ciudades.FirstOrDefault((x) => x.CiudadId == id);
+                if(cityFind != null)
+                {
+                    cityFind.Estado = cityFind.Estado == 1 ? 0 : 1;
+                    pruebaContext.SaveChanges();
+                    return new ResponseGeneralModel<string?>(true, null, "Ciudad actualizada el estado", null);
+                } else
+                {
+                    return new ResponseGeneralModel<string?>(false, null, "Ciudad no encontrada", null);
+                }
+            }
         }
     }
 }
